@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textrm | Tiny Recursive Model</title>
+    <style>
+        
+        body { 
+            background: #f8fafc; 
+            color: #1e293b;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            padding: 5% 10%; 
+            max-width: 800px; 
+            margin: auto; 
+        }
+        
+        h1 { 
+            
+            background: linear-gradient(90deg, #3b82f6, #2dd4bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: 2px solid #e2e8f0; 
+            padding-bottom: 10px; 
+            font-size: 3em; 
+            font-weight: 800;
+        }
+
+        .card { 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 16px; 
+            padding: 25px; 
+            margin: 20px 0; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
+        }
+
+        .tech-stack { 
+            color: #059669; 
+            font-family: 'SF Mono', 'Fira Code', monospace; 
+            font-size: 0.9em; 
+            margin-top: 15px; 
+            background: #ecfdf5;
+            padding: 8px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .status { 
+            display: inline-block; 
+            background: #f43f5e; 
+            color: white; 
+            padding: 4px 14px; 
+            border-radius: 20px; 
+            font-size: 0.85em; 
+            font-weight: bold; 
+            margin-bottom: 10px; 
+            box-shadow: 0 4px 6px -1px rgba(244, 63, 94, 0.2);
+        }
+
+        strong { color: #2563eb; }
+
+        code { 
+            background: #f1f5f9; 
+            padding: 0.2em 0.4em; 
+            border-radius: 4px; 
+            font-family: monospace; 
+            color: #be185d; 
+        }
+
+        
+        .hf-link-card {
+            background: #ffffff; 
+            border: 2px solid #3b82f6; 
+            padding: 10px 20px; 
+            border-radius: 12px; 
+            color: #3b82f6;
+            transition: all 0.2s ease;
+            font-weight: bold;
+        }
+        .hf-link-card:hover {
+            background: #3b82f6;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        ul { list-style-type: '✨ '; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #64748b; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <h1>textrm 🚀</h1>
+    <p>A Language Model optimized for <strong>Apple Silicon (MLX)</strong>, featuring a <strong>Tiny Recursive Model</strong> architecture.</p>
+
+    <div class="card">
+        <div class="status">🔥 TRAINING PHASE</div>
+        <h3>Current Progress</h3>
+        <p>Training on <strong>100,000</strong> high-quality synthetic samples for 8 epochs.</p>
+        <div class="tech-stack">
+            Framework: MLX / NumPy
+        </div>
+    </div>
+
+    <div class="card">
+        <h3 style="color: #3b82f6;">Why TRM? 🧠</h3>
+        <ul>
+            <li><strong>Latent Recursion:</strong> Maximizing reasoning depth within a tiny footprint by recursively iterating through latent states.</li>
+            <li><strong>Deep Supervision:</strong> Applying loss at each improvement cycle to ensure stable and coherent <code>&lt;think&gt;</code> processes.</li>
+            <li><strong>Mail-Gen Specialized:</strong> Expert-level proficiency in drafting professional emails and polite refusals.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3 style="color: #3b82f6;">Architecture Overview</h3>
+        <p>Based on the "Tiny Recursive Models" paper, utilizing shared layers to perform <code>n=6</code> latent recursions and <code>T=3</code> improvement cycles.</p>
+    </div>
+
+    <div class="card">
+        <h3>📦 Released Models on Hugging Face</h3>
+        <p>Check out my previous architectures and pre-trained weights:</p>
+        
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+            <a href="https://huggingface.co/Kamisori-daijin/textrm-28M-bizmail" target="_blank" style="text-decoration: none;">
+                <div class="hf-link-card">
+                    textrm (28M)
+                </div>
+            </a>
+            
+            <a href="https://huggingface.co/Kamisori-daijin/textrm1.5-25M-bizmail" target="_blank" style="text-decoration: none;">
+                <div class="hf-link-card">
+                    textrm-1.5 (25M)
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Developed by <strong>kamisori-daijin</strong><br>Built with MLX</p>
+    </footer>
+
+</body>
+</html>
