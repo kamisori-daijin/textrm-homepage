@@ -6,99 +6,135 @@
     <title>textrm | Tiny Recursive Model</title>
     <style>
         
+        :root {
+            --bg: #ffffff;
+            --text: #1d1d1f;
+            --sub-text: #6e6e73;
+            --accent: #0071e3;
+            --border: #d2d2d7;
+            --status-bg: #1d1d1f;
+            --status-text: #ffffff;
+            --code-bg: #f5f5f7;
+            --code-text: #bf181d;
+        }
+
         body { 
-            background: #f8fafc; 
-            color: #1e293b;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            padding: 5% 10%; 
-            max-width: 800px; 
+            background: var(--bg); 
+            color: var(--text); 
+            
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif; 
+            line-height: 1.5; 
+            letter-spacing: -0.015em; 
+            padding: 8% 5%; 
+            max-width: 980px; 
             margin: auto; 
+            -webkit-font-smoothing: antialiased; 
         }
         
+        
         h1 { 
-            
-            background: linear-gradient(90deg, #3b82f6, #2dd4bf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            border-bottom: 2px solid #e2e8f0; 
-            padding-bottom: 10px; 
-            font-size: 3em; 
-            font-weight: 800;
+            color: var(--text); 
+            border: none; 
+            padding: 0; 
+            margin-bottom: 5px; 
+            font-size: 3.5em; 
+            font-weight: 700;
+            letter-spacing: -0.03em;
         }
 
+        
+        .hero { font-size: 1.6em; font-weight: 600; color: var(--sub-text); margin-top: 0; letter-spacing: -0.02em; }
+        .hero strong { color: var(--text); font-weight: 700; }
+
+        
         .card { 
             background: #ffffff; 
-            border: 1px solid #e2e8f0; 
-            border-radius: 16px; 
-            padding: 25px; 
-            margin: 20px 0; 
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
+            border: none; 
+            border-radius: 0; 
+            padding: 60px 0; 
+            margin: 0; 
+            border-bottom: 1px solid var(--border); 
+            box-shadow: none; 
         }
 
+        h3 { font-size: 1.8em; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; color: var(--text); }
+        h3.why { color: var(--accent); } 
+
+        p { font-size: 1.1em; color: var(--sub-text); margin-bottom: 20px; font-weight: 400; }
+        p strong { color: var(--text); font-weight: 600; }
+
         .tech-stack { 
-            color: #059669; 
+            color: #1a8754;
             font-family: 'SF Mono', 'Fira Code', monospace; 
             font-size: 0.9em; 
-            margin-top: 15px; 
-            background: #ecfdf5;
-            padding: 8px 12px;
-            border-radius: 8px;
+            margin-top: 25px; 
+            background: #eaf6ed;
+            padding: 12px 18px;
+            border-radius: 10px;
             display: inline-block;
+            font-weight: 500;
         }
 
         .status { 
             display: inline-block; 
-            background: #f43f5e; 
-            color: white; 
-            padding: 4px 14px; 
-            border-radius: 20px; 
+            background: var(--status-bg); 
+            color: var(--status-text); 
+            padding: 6px 16px; 
+            border-radius: 50px; 
             font-size: 0.85em; 
-            font-weight: bold; 
-            margin-bottom: 10px; 
-            box-shadow: 0 4px 6px -1px rgba(244, 63, 94, 0.2);
+            font-weight: 600; 
+            letter-spacing: 0.01em;
+            margin-bottom: 15px; 
+            box-shadow: none;
         }
 
-        strong { color: #2563eb; }
-
         code { 
-            background: #f1f5f9; 
-            padding: 0.2em 0.4em; 
-            border-radius: 4px; 
+            background: var(--code-bg); 
+            padding: 0.25em 0.4em; 
+            border-radius: 6px; 
             font-family: monospace; 
-            color: #be185d; 
+            color: var(--code-text); 
         }
 
         
-        .hf-link-card {
-            background: #ffffff; 
-            border: 2px solid #3b82f6; 
-            padding: 10px 20px; 
-            border-radius: 12px; 
-            color: #3b82f6;
-            transition: all 0.2s ease;
-            font-weight: bold;
+        .hf-links-container {
+            display: flex; gap: 30px; flex-wrap: wrap; margin-top: 25px;
         }
-        .hf-link-card:hover {
-            background: #3b82f6;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        
+        .hf-link {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
+        .hf-link:hover {
+            color: #0077ed; 
+            text-decoration: underline; 
+        }
+        .hf-link strong { font-weight: 700; color: inherit; }
 
-        ul { list-style-type: '✨ '; padding-left: 20px; }
-        li { margin-bottom: 8px; }
+        ul { list-style-type: disc; padding-left: 20px; color: var(--sub-text); font-size: 1.1em; }
+        li { margin-bottom: 12px; }
 
-        footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #64748b; font-weight: 600; }
+        footer { 
+            text-align: center; 
+            margin-top: 80px; 
+            padding-top: 40px;
+            font-size: 0.9em; 
+            color: var(--sub-text); 
+            font-weight: 500; 
+            border-top: 1px solid var(--border);
+        }
     </style>
 </head>
 <body>
 
-    <h1>textrm 🚀</h1>
-    <p>A Language Model optimized for <strong>Apple Silicon (MLX)</strong>, featuring a <strong>Tiny Recursive Model</strong> architecture.</p>
+    <h1>textrm</h1>
+    <p class="hero">A Language Model optimized for <strong>Apple Silicon (MLX)</strong>, featuring a <strong>Tiny Recursive Model</strong> architecture.</p>
 
     <div class="card">
-        <div class="status">🔥 TRAINING PHASE</div>
+        <div class="status">TRAINING PHASE</div>
         <h3>Current Progress</h3>
         <p>Training on <strong>100,000</strong> high-quality synthetic samples for 8 epochs.</p>
         <div class="tech-stack">
@@ -107,7 +143,7 @@
     </div>
 
     <div class="card">
-        <h3 style="color: #3b82f6;">Why TRM? 🧠</h3>
+        <h3 class="why">Why TRM?</h3>
         <ul>
             <li><strong>Latent Recursion:</strong> Maximizing reasoning depth within a tiny footprint by recursively iterating through latent states.</li>
             <li><strong>Deep Supervision:</strong> Applying loss at each improvement cycle to ensure stable and coherent <code>&lt;think&gt;</code> processes.</li>
@@ -116,25 +152,21 @@
     </div>
 
     <div class="card">
-        <h3 style="color: #3b82f6;">Architecture Overview</h3>
+        <h3>Architecture Overview</h3>
         <p>Based on the "Tiny Recursive Models" paper, utilizing shared layers to perform <code>n=6</code> latent recursions and <code>T=3</code> improvement cycles.</p>
     </div>
 
     <div class="card">
-        <h3>📦 Released Models on Hugging Face</h3>
-        <p>Check out my previous architectures and pre-trained weights:</p>
+        <h3>Hugging Face Model Releases</h3>
+        <p>Explore my previous architectures and pre-trained weights:</p>
         
-        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
-            <a href="https://huggingface.co/Kamisori-daijin/textrm-28M-bizmail" target="_blank" style="text-decoration: none;">
-                <div class="hf-link-card">
-                    textrm (28M)
-                </div>
+        <div class="hf-links-container">
+            <a href="https://huggingface.co/Kamisori-daijin/textrm-28M-bizmail" target="_blank" class="hf-link">
+                <strong>textrm (28M)</strong>
             </a>
             
-            <a href="https://huggingface.co/Kamisori-daijin/textrm1.5-25M-bizmail" target="_blank" style="text-decoration: none;">
-                <div class="hf-link-card">
-                    textrm-1.5 (25M)
-                </div>
+            <a href="https://huggingface.co/Kamisori-daijin/textrm1.5-25M-bizmail" target="_blank" class="hf-link">
+                <strong>textrm-1.5 (25M)</strong>
             </a>
         </div>
     </div>
