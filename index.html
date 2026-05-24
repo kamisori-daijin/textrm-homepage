@@ -58,7 +58,8 @@
         }
 
         h3 { font-size: 1.8em; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; color: var(--text); }
-        h3.why { color: var(--accent); } 
+        h3.why { color: var(--accent); }
+        h3.moe { color: #7c3aed; }
 
         p { font-size: 1.1em; color: var(--sub-text); margin-bottom: 20px; font-weight: 400; }
         p strong { color: var(--text); font-weight: 600; }
@@ -133,15 +134,7 @@
     <h1>textrm</h1>
     <p class="hero">A Language Model optimized for <strong>Apple Silicon (MLX)</strong>, featuring a <strong>Tiny Recursive Model</strong> architecture.</p>
 
-    <div class="card">
-        <div class="status">TRAINING PHASE</div>
-        <h3>Current Progress</h3>
-        <p>Training on <strong>100,000</strong> high-quality synthetic samples for 8 epochs.</p>
-        <div class="tech-stack">
-            Framework: MLX / NumPy
-        </div>
-    </div>
-
+    
     <div class="card">
         <h3 class="why">Why TRM?</h3>
         <ul>
@@ -154,6 +147,24 @@
     <div class="card">
         <h3>Architecture Overview</h3>
         <p>Based on the "Tiny Recursive Models" paper, utilizing shared layers to perform <code>n=6</code> latent recursions and <code>T=3</code> improvement cycles.</p>
+    </div>
+
+    <div class="card">
+        <h3 class="moe">textrm-MoE: Mixture of Experts Edition</h3>
+        <p><strong>textrm-MoE</strong> is an advanced extension combining Tiny Recursive Models with <strong>Mixture of Experts (MoE)</strong> routing, optimized for Apple Silicon.</p>
+        <ul>
+            <li><strong>Top-k Routing:</strong> Dynamic gating with configurable expert allocation per token.</li>
+            <li><strong>Persistent Shared Expert:</strong> A dedicated, non-gated expert always active alongside specialized experts to capture invariant general knowledge.</li>
+            <li><strong>SwiGLU Experts:</strong> High-capacity feed-forward expert layers utilizing SwiGLU activations.</li>
+            <li><strong>Adaptive Computation:</strong> Integrates a learned Ponder/Halt module to dynamically determine optimal early-exit or accuracy-based execution termination.</li>
+            <li><strong>Dual-Compiled Pipeline:</strong> Engineered with strict pure-functional compilation to bypass Metal argument buffer exhaustion and eliminate lazy-evaluation overhead.</li>
+            <li><strong>Zero-Copy Data Pipeline:</strong> Pre-tokenized datasets mapped directly into raw binary files, leveraging memory-mapping for instantaneous zero-overhead mini-batching.</li>
+            <li><strong>Deep Supervision & EMA:</strong> Multi-step intermediate losses guide recursive state evolution, paired with Exponential Moving Average shadow-weight tracking for superior convergence.</li>
+        </ul>
+        <div class="tech-stack">
+            90M Parameters • 8-Expert MoE • 5 Latent Recursions • 2 Improvement Cycles
+        </div>
+        <p style="margin-top: 20px;"><a href="https://github.com/kamisori-daijin/textrm-MoE" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">View textrm-MoE on GitHub →</a></p>
     </div>
 
     <div class="card">
